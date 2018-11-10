@@ -1,0 +1,34 @@
+## Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+logging:
+  level:
+    root: INFO
+    com.boostfield.majoritycore: DEBUG
+    org.springframework.web: DEBUG
+    path: logs
+  pattern:
+    console: Dev%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n
+    file: Dev%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n
+
+spring:
+  profiles:
+    active: ywb
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
+      jdbc:
+        lob:
+          non_contextual_creation: true
+    show-sql: true
+
+app:
+  jwtSecret: JWTSuperSecretKey
+  jwtExpirationInMs: 604800000
+  setup: true
+  username: admin
+  password: 123456
+  nickname: ио╣ш
